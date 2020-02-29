@@ -1,0 +1,26 @@
+body {
+  background-color: #eee;
+  margin: 20px;
+}
+
+.ct-series-a path {
+  stroke: #3a581d !important;
+}
+
+.ct-series-b path {
+  stroke: #537e2a !important;
+}
+
+.divider path {
+  stroke: white !important;
+  stroke-width: 0 !important;
+}
+
+.holder-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+}

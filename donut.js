@@ -3,14 +3,13 @@
 const donutUno = document.querySelector( '#donutUno' );
 const donutDuo = document.querySelector( '#donutDuo' );
 const donutTre = document.querySelector( '#donutTre' );
-const donutQuattro = document.querySelector( '#donutQuattro' );
 
 // donut skills values
 // -----------------------------------------------------
 const donutUnoSkill = 96;
 const donutDuoSkill = 89;
 const donutTreSkill = 66;
-const donutQuattroSkill = 29;
+
 
 // donut datas
 // -----------------------------------------------------
@@ -25,10 +24,6 @@ const donutDuoData = {
 const donutTreData = {
     labels: [ 'Skill', 'No skill' ],
     series: [ donutTreSkill, 100 - donutTreSkill ]
-};
-const donutQuattroData = {
-    labels: [ 'Skill', 'No skill' ],
-    series: [ donutQuattroSkill, 100 - donutQuattroSkill ]
 };
 
 // donut options
@@ -46,8 +41,7 @@ window.addEventListener( 'load', function () {
     const chartUno = new Chartist.Pie( donutUno, donutUnoData, donutOptions );
     const chartDuo = new Chartist.Pie( donutDuo, donutDuoData, donutOptions );
     const chartTre = new Chartist.Pie( donutTre, donutTreData, donutOptions );
-    const chartQuattro = new Chartist.Pie( donutQuattro, donutQuattroData, donutOptions );
-
+   
     // add donut values
     // -----------------------------------------------------
     const chartUnoValue = document.createElement( 'div' );
@@ -64,10 +58,6 @@ window.addEventListener( 'load', function () {
     chartTreValue.classList.add( 'holder-value' );
     chartTreValue.innerHTML = donutTreData.series[0] + '%';
     donutTre.appendChild( chartTreValue );
-    // -----------------------------------------------------
-    const chartQuattroValue = document.createElement( 'div' );
-    chartQuattroValue.classList.add( 'holder-value' );
-    chartQuattroValue.innerHTML = donutQuattroData.series[0] + '%';
-    donutQuattro.appendChild( chartQuattroValue );
+    
 
 }, false );

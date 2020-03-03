@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css"/>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -12,19 +13,48 @@
 			<h1>Welcome Greta,</h1>
 		</header>
 		<main>
-			<article id="circlechart">
+			<article id="circlechart" class="test">
+
+					
+			<!-- Third up, the first important chart, the DONUTS -->
+			<div id="fuelChart">
+				<label>Fuel</label>
+				<canvas id="fuelProgress"></canvas>
+
+			</div>
+			<div id="powerChart">
+				<label>Power</label>
+				<canvas id="powerProgress"></canvas>
 				
+			</div>
+			<div id="hullDamage">
+				<label>Hull Damage</label>
+				<canvas id="damageProgress"></canvas>
+				
+
 			</article>
 			<article id="areachart">
 				<h2>Number of infections</h2>
+				<div id="chart"></div>
 				
 			</article>
 			<article id="thermometer">
 				<h2>Your temperature</h2>
 
+				<div id="wrapper">	
+					<div id="termometer">
+						<div id="temperature" style="height:0" data-value="0°C"></div>
+						<div id="graduations"></div>
+					</div>
+				</div>
+
 			</article>
 		</main>
 
 		<script type="text/javascript" src="scripts.js"></script>
+		<script src='https://cdn.jsdelivr.net/npm/apexcharts@3.4.1'></script><script  src="area.js"></script>
+		<script type="text/javascript" src="Thermometer.js"></script>
+		<script type="text/javascript" src="appeltaart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 	</body>
 </html>

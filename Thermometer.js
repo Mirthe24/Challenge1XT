@@ -12,14 +12,14 @@ const config = {
 
 
 // Change temperature
-var bullshit = 47
+var heat= 38
 
 const temperature = document.getElementById("temperature");
 const temp = document.getElementById("temp");
 
 function setTemperature() {
-	temperature.style.height = (bullshit - 0) / (50 - 0) * 100 + "%";
-	temperature.dataset.value = bullshit + "°C";
+	temperature.style.height = (heat - 0) / (50 - 0) * 100 + "%";
+	temperature.dataset.value = heat + "°C";
 }
 setTimeout(setTemperature, 1000);
 

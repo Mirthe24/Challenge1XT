@@ -1,30 +1,41 @@
 var options = {
   chart: {
-    height: 320,
+    height: 380,
     type: "area",
-    foreColor: '#4608D5'
+    foreColor: '#6D6D6D'
   },
   series: [
     {
       name: "Series 1",
-      data: [20, 45, 56, 70, 69, 71, 76]
+      data: [2, 23, 19, 45, 38, 52, 45]
     }
-  ],   
+  ],
   fill: {
     type: "gradient",
     gradient: {
-      
+      shadeIntensity: 1,
+      opacityFrom: 0.7,
+      opacityTo: 0.9,
       colorStops: [
         {
           offset: 0,
-          color: "#4299DC",
-          opacity: 0.8
+          color: "#EB656F",
+          opacity: 1
         },
-      
+        {
+          offset: 20,
+          color: "#FAD375",
+          opacity: 1
+        },
+        {
+          offset: 60,
+          color: "#61DBC3",
+          opacity: 1
+        },
         {
           offset: 100,
-          color: "#654399",
-          opacity: 0.8
+          color: "#95DA74",
+          opacity: 1
         }
       ]
     }
@@ -34,13 +45,13 @@ var options = {
   },
   xaxis: {
     categories: [
-      "22 Feb",
-      "23 Feb",
-      "24 Feb",
-      "25 Feb",
-      "26 Feb",
-      "27 Feb",
-      "28 Feb"
+      "01 Jan",
+      "02 Jan",
+      "03 Jan",
+      "04 Jan",
+      "05 Jan",
+      "06 Jan",
+      "07 Jan"
     ]
   }
 };

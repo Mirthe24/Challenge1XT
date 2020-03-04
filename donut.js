@@ -1,148 +1,63 @@
+// donut elements
+// -----------------------------------------------------
+const donutUno = document.querySelector( '#donutUno' );
+const donutDuo = document.querySelector( '#donutDuo' );
+const donutTre = document.querySelector( '#donutTre' );
 
-var bed = 20;
-var para= 66;
-var morph = 34;
+// donut skills values
+// -----------------------------------------------------
+const donutUnoSkill = 96;
+const donutDuoSkill = 89;
+const donutTreSkill = 66;
 
 
-var chartProgress = document.getElementById("Beds");
+// donut datas
+// -----------------------------------------------------
+const donutUnoData = {
+    labels: [ 'Skill', 'No skill' ],
+    series: [ donutUnoSkill, 100 - donutUnoSkill ]
+};
+const donutDuoData = {
+    labels: [ 'Skill', 'No skill' ],
+    series: [ donutDuoSkill, 100 - donutDuoSkill ]
+};
+const donutTreData = {
+    labels: [ 'Skill', 'No skill' ],
+    series: [ donutTreSkill, 100 - donutTreSkill ]
+};
 
-var noBed = (80 - bed);
-if (chartProgress) {
-  var myChartCircle = new Chart(chartProgress, {
-    type: 'doughnut',
-    data: {
-      labels: ["Beds in use", 'Beds left'],
-      datasets: [{
-        backgroundColor: ["#4299DC", '#DBD7F9'],
-        data: [bed, noBed]
-      }]
-    },
-    plugins: [{
-      beforeDraw: function(chart) {
-        var width = chart.chart.width,
-            height = chart.chart.height,
-            ctx = chart.chart.ctx;
+// donut options
+// -----------------------------------------------------
+const donutOptions = {
+    donut: true,
+    showLabel: false,
+    donutWidth: 22
+};
+
+window.addEventListener( 'load', function () {
+
+    // draw donut charts
+    // -----------------------------------------------------
+    const chartUno = new Chartist.Pie( donutUno, donutUnoData, donutOptions );
+    const chartDuo = new Chartist.Pie( donutDuo, donutDuoData, donutOptions );
+    const chartTre = new Chartist.Pie( donutTre, donutTreData, donutOptions );
+   
+    // add donut values
+    // -----------------------------------------------------
+    const chartUnoValue = document.createElement( 'div' );
+    chartUnoValue.classList.add( 'holder-value' );
+    chartUnoValue.innerHTML = donutUnoData.series[0] + '%';
+    donutUno.appendChild( chartUnoValue );
+    // -----------------------------------------------------
+    const chartDuoValue = document.createElement( 'div' );
+    chartDuoValue.classList.add( 'holder-value' );
+    chartDuoValue.innerHTML = donutDuoData.series[0] + '%';
+    donutDuo.appendChild( chartDuoValue );
+    // -----------------------------------------------------
+    const chartTreValue = document.createElement( 'div' );
+    chartTreValue.classList.add( 'holder-value' );
+    chartTreValue.innerHTML = donutTreData.series[0] + '%';
+    donutTre.appendChild( chartTreValue );
     
-        ctx.restore();
-        var fontSize = (height / 100).toFixed(2);
-        ctx.font = fontSize + "em sans-serif";
-        ctx.fillStyle = "#200061";
-        ctx.textBaseline = "middle";
-    
-        var text = bed,
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-    
-        ctx.fillText(text, textX, textY);
-        ctx.save();
-      }
-  }],
-    options: {
-      legend: {
-        display: false,
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      cutoutPercentage: 85
-    }
 
-  });
-
-  
-}
-
-
-
-
-	var chartProgress = document.getElementById("Lyrica");
-var noLyrica = (190 - para);
-if (chartProgress) {
-  var myChartCircle = new Chart(chartProgress, {
-    type: 'doughnut',
-    data: {
-      labels: ["Lyrica left", 'Already used'],
-      datasets: [{
-        backgroundColor: ["#4299DC", '#DBD7F9'],
-        data: [para, noLyrica]
-      }]
-    },
-    plugins: [{
-      beforeDraw: function(chart) {
-        var width = chart.chart.width,
-            height = chart.chart.height,
-            ctx = chart.chart.ctx;
-    
-        ctx.restore();
-        var fontSize = (height / 100).toFixed(2);
-        ctx.font = fontSize + "em sans-serif";
-        ctx.fillStyle = "#200061";
-        ctx.textBaseline = "middle";
-    
-        var text = para + " kg",
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-    
-        ctx.fillText(text, textX, textY);
-        ctx.save();
-      }
-  }],
-    options: {
-      legend: {
-        display: false,
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      cutoutPercentage: 85
-    }
-
-  });
-
-  
-}
-
-		var chartProgress = document.getElementById("Morphine");
-var noMorphine = (210 - morph);
-if (chartProgress) {
-  var myChartCircle = new Chart(chartProgress, {
-    type: 'doughnut',
-    data: {
-      labels: ["Mobic left", 'Already used'],
-      datasets: [{
-        backgroundColor: ["#4299DC", '#DBD7F9' ],
-        data: [morph, noMorphine]
-      }]
-    },
-    plugins: [{
-      beforeDraw: function(chart) {
-        var width = chart.chart.width,
-            height = chart.chart.height,
-            ctx = chart.chart.ctx;
-    
-        ctx.restore();
-        var fontSize = (height / 100).toFixed(2);
-        ctx.font = fontSize + "em sans-serif";
-        ctx.fillStyle = "#200061";
-        ctx.textBaseline = "middle";
-    
-        var text = morph + " kg",
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-    
-        ctx.fillText(text, textX, textY);
-        ctx.save();
-      }
-  }],
-    options: {
-      legend: {
-        display: false,
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      cutoutPercentage: 85
-    }
-
-  });
-
-  
-}
-
+}, false );
